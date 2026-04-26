@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --bg: #0f172a;
+    --card: rgba(255, 255, 255, 0.08);
+    --text: #ffffff;
+    --accent: #38bdf8;
+}
+
+.light-mode {
+    --bg: #f4f4f4;
+    --card: rgba(255,255,255,0.7);
+    --text: #111;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    backdrop-filter: blur(10px);
+    background: var(--card);
+}
+
+nav a {
+    color: var(--text);
+    margin-left: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* CONTAINER */
+.container {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* PROFILE */
+.profile {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* GLASS CARD */
+.card {
+    background: var(--card);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* FORM */
+input, textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: var(--accent);
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* TOGGLE BUTTON */
+.toggle-btn {
+    cursor: pointer;
+    padding: 8px 12px;
+    background: var(--accent);
+    border-radius: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 95%;
+    }
+}
+/* FADE-IN BASE */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+/* SHOW WHEN ACTIVE */
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* STAGGER EFFECT */
+.fade-in.delay-1 { transition-delay: 0.2s; }
+.fade-in.delay-2 { transition-delay: 0.4s; }
+.fade-in.delay-3 { transition-delay: 0.6s; }
+
+/* HOVER ANIMATION */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
